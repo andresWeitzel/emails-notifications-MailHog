@@ -23,6 +23,17 @@ This is a Spring Boot-based demo project for sending emails. It uses MailHog as 
 git clone https://github.com/youruser/email-notifications.git
 cd email-notifications
 ```
+* Before building the Docker image, you need to generate the JAR file of the project. Run the following command from the root directory of the project:
+```git
+./mvnw clean package
+or
+mvn clean package (If you have Maven installed globally)
+```
+* This will create a .jar file inside the target/ directory, with a name similar to:
+```git
+target/email-notifications-0.0.1-SNAPSHOT.jar
+```
+* This file will be used by Docker to build the application image.
 * Before building and running the containers, make sure you have Docker running (for Windows, use [Docker Desktop]([https://nodejs.org/en/download](https://www.docker.com/products/docker-desktop/)))
 * Once installed, make sure Docker is running
 ```git
