@@ -19,15 +19,15 @@ Este es un proyecto de demostración basado en Spring Boot para el envío de cor
 
 ### Configuración y Ejecución
 * Clonación del repositorio
-  ```git
+```git
   git clone https://github.com/tuusuario/email-notifications.git
   cd email-notifications
-  ```
-* Asegúrate de que Docker esté en funcionamiento. Antes de construir y ejecutar los contenedores, asegúrate de tener Docker en funcionamiento (para windows se usa docker desktop)
+```
+* Antes de construir y ejecutar los contenedores, asegúrate de tener Docker en funcionamiento (para windows se usa [Docker Desktop]([https://nodejs.org/en/download](https://www.docker.com/products/docker-desktop/)))
 * Una vez instalado, asegúrate de que Docker esté corriendo
-  ```git
+```git
    docker --version
-  ```
+```
 * Una vez que Docker esté corriendo, puedes construir y levantar los contenedores
  ```git
    docker-compose up --build
