@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private EmailService emailService;
+    private EmailService emailService; 
 
     @PostMapping
     public ResponseEntity<String> registerUser(@RequestBody User user) {
