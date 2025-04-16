@@ -19,6 +19,7 @@ This is a Spring Boot-based demo project for sending emails. It uses MailHog as 
 * Docker to run MailHog and the containerized application.
 
 ### Configuration and Execution
+* If any of the following steps don't work, watch this [video](https://www.youtube.com/watch?v=QMlpFdOQHfI)
 * Repository Clone
 ```git
 git clone https://github.com/youruser/email-notifications.git
