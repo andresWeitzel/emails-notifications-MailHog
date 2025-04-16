@@ -18,4 +18,4 @@ public class UserController {
         emailService.sendWelcomeEmail(user.getEmail(), user.getName());
         return ResponseEntity.ok("User registered and email sent.");
     }
-} 
+}  
