@@ -1,46 +1,44 @@
 ## Email Notifications MailHog
-Este es un proyecto de demostración basado en Spring Boot para el envío de correos electrónicos. Utiliza MailHog como servidor SMTP para pruebas locales y está completamente dockerizado para facilitar su ejecución.
+This is a Spring Boot-based demo project for sending emails. It uses MailHog as an SMTP server for local testing and is fully Dockerized for easy execution.
 
-### Tecnologías y Dependencias
- * Spring Boot: Framework principal para la construcción de aplicaciones Java.
-* Spring Boot Starter Web: Para crear aplicaciones web RESTful.
-* Spring Boot Starter Mail: Para el manejo de correos electrónicos.
-* Lombok: Librería para reducir el boilerplate en el código.
-* MailHog: Servidor SMTP para pruebas de correos locales.
-* Docker: Para crear y gestionar contenedores de la aplicación.
+### Technologies and Dependencies
+* Spring Boot: Core framework for building Java applications.
+* Spring Boot Starter Web: For creating RESTful web applications.
+* Spring Boot Starter Mail: For handling emails.
+* Lombok: A library to reduce boilerplate in code.
+* MailHog: SMTP server for local email testing.
+* Docker: For creating and managing application containers.
 
-### Funcionalidades
-* Registro de usuarios: A través de un controlador REST, los usuarios pueden registrarse y recibir un correo electrónico de bienvenida.
-* Envío de correos electrónicos: Usando JavaMailSender para enviar correos electrónicos mediante MailHog en entorno de desarrollo.
+### Features
+* User Registration: Through a REST controller, users can register and receive a welcome email.
+* Sending Emails: Using JavaMailSender to send emails through MailHog in the development environment.
 
-### Requisitos
-* Java 17 o superior.
-* Docker para ejecutar MailHog y la aplicación en contenedores.
+### Requirements
+* Java 17 or higher.
+* Docker to run MailHog and the containerized application.
 
-### Configuración y Ejecución
-* Clonación del repositorio
+### Configuration and Execution
+* Repository Clone
 ```git
-  git clone https://github.com/tuusuario/email-notifications.git
-  cd email-notifications
+git clone https://github.com/youruser/email-notifications.git
+cd email-notifications
 ```
-* Antes de construir y ejecutar los contenedores, asegúrate de tener Docker en funcionamiento (para windows se usa [Docker Desktop]([https://nodejs.org/en/download](https://www.docker.com/products/docker-desktop/)))
-* Una vez instalado, asegúrate de que Docker esté corriendo
+* Before building and running the containers, make sure you have Docker running (for Windows, use [Docker Desktop]([https://nodejs.org/en/download](https://www.docker.com/products/docker-desktop/)))
+* Once installed, make sure Docker is running
 ```git
-   docker --version
+docker --version
 ```
-* Una vez que Docker esté corriendo, puedes construir y levantar los contenedores
- ```git
-   docker-compose up --build
- ```
-
-### Pruebas
-* Accedemos a MailHog. La interfaz web de MailHog estará disponible en `http://localhost:8025`, donde podrás ver los correos electrónicos enviados.
-* Puedes probar la API utilizando Postman o cualquier cliente HTTP, enviando una solicitud POST a `http://localhost:8080/api/users` con el siguiente cuerpo JSON
+* Once Docker is running, you can build and deploy the containers
 ```git
-   {
-  "name": "Juan",
-  "email": "juan@example.com"
-  }
- ```
+docker-compose up --build
+```
 
-
+### Testing
+* Access MailHog. The MailHog web interface will be available at `http://localhost:8025`, where you can view sent emails.
+* You can test the API using Postman or any HTTP client by sending a POST request to `http://localhost:8080/api/users` with the following JSON body.
+```git
+{
+"name": "John",
+"email": "john@example.com"
+}
+```
