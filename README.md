@@ -1,5 +1,6 @@
 ## Email Notifications MailHog
 This is a Spring Boot-based demo project for sending emails. It uses MailHog as an SMTP server for local testing and is fully Dockerized for easy execution.
+[Demo](https://www.youtube.com/watch?v=QMlpFdOQHfI)
 
 ### Technologies and Dependencies
 * Spring Boot: Core framework for building Java applications.
@@ -53,3 +54,4 @@ docker-compose up --build
 "email": "john@example.com"
 }
 ```
+* `Important` : Now the application is Dockerized. We can stop or run the app directly with Docker.
