@@ -49,9 +49,9 @@ docker-compose up --build
 ```git
 docker rmi -f $(docker images -q)
 ```
-* Then we delete the unused volumes:
+* Then, to do a general cleanup of everything unused (stopped containers, untagged images, unused networks, etc.), you can use the following command::
 ```git
-docker volume prune
+docker system prune -a --volumes
 ```
 * We rebuild our containers
 ```git
