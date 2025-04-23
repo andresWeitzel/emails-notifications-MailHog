@@ -45,6 +45,18 @@ docker --version
 ```git
 docker-compose up --build
 ```
+* If there is any problem building our service environment with Docker and if any image is in use and you cannot remove it directly, you can force the removal with the following command:
+```git
+docker rmi -f $(docker images -q)
+```
+* Then we delete the unused volumes:
+```git
+docker volume prune
+```
+* We rebuild our containers
+```git
+docker-compose up --build
+```
 
 ### Testing
 * Access MailHog. The MailHog web interface will be available at `http://localhost:8025`, where you can view sent emails.
