@@ -1,3 +1,9 @@
+<div align = "center">
+  <img src="./doc/assets/img/mailhog.jpeg" >
+</div>
+
+<br>
+
 ## Email Notifications MailHog
 This is a Spring Boot-based demo project for sending emails. It uses MailHog as an SMTP server for local testing and is fully Dockerized for easy execution.
 [Demo](https://www.youtube.com/watch?v=QMlpFdOQHfI)
