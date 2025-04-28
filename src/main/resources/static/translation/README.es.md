@@ -6,10 +6,10 @@
 
 <div align="right">
      <a href="./README.es.md" target="_blank">
-       <img src="./src/main/resources/static/img/arg-flag.jpg" width="10%" height="10%" />
+       <img src="../img/arg-flag.jpg" width="10%" height="10%" />
    </a>
     <a href="https://github.com/andresWeitzel/emails-notifications-MailHog" target="_blank">
-       <img src="./src/main/resources/static/img/eeuu-flag.jpg" width="10%" height="10%" />
+       <img src="../img/eeuu-flag.jpg" width="10%" height="10%" />
    </a>
 </div>
 
