@@ -15,78 +15,77 @@
 
 <div align="center">
 
-## Email Notifications MailHog
+## Notificaciones por correo electrónico MailHog
 
 </div>
 
 <br>
 
-This is a Spring Boot-based demo project for sending emails. It uses MailHog as an SMTP server for local testing and is fully Dockerized for easy execution.
+Este es un proyecto de demostración basado en Spring Boot para el envío de correos electrónicos. Utiliza MailHog como servidor SMTP para pruebas locales y está completamente Dockerizado para una fácil ejecución.
 [Demo](https://www.youtube.com/watch?v=QMlpFdOQHfI)
 
-### Technologies and Dependencies
-* Spring Boot: Core framework for building Java applications.
-* Spring Boot Starter Web: For creating RESTful web applications.
-* Spring Boot Starter Mail: For handling emails.
-* Lombok: A library to reduce boilerplate in code.
-* MailHog: SMTP server for local email testing.
-* Docker: For creating and managing application containers.
+### Tecnologías y dependencias
+* Spring Boot: Framework principal para la creación de aplicaciones Java.
+* Spring Boot Starter Web: Para crear aplicaciones web RESTful.
+* Spring Boot Starter Mail: Para gestionar correos electrónicos.
+* Lombok: Una biblioteca para reducir el código repetitivo.
+* MailHog: Servidor SMTP para pruebas locales de correo electrónico.
+* Docker: Para crear y gestionar contenedores de aplicaciones.
 
-### Features
-* User Registration: Through a REST controller, users can register and receive a welcome email.
-* Sending Emails: Using JavaMailSender to send emails through MailHog in the development environment.
+###Características
+* Registro de usuarios: Mediante un controlador REST, los usuarios pueden registrarse y recibir un correo electrónico de bienvenida.
+* Envío de correos electrónicos: Uso de JavaMailSender para enviar correos electrónicos a través de MailHog en el entorno de desarrollo.
 
-### Requirements
-* Java 17 or higher.
-* Docker to run MailHog and the containerized application.
+### Requisitos
+* Java 17 o superior.
+* Docker para ejecutar MailHog y la aplicación en contenedores.
 
-### Configuration and Execution
-* If any of the following steps don't work, watch this [video](https://www.youtube.com/watch?v=QMlpFdOQHfI)
-* Repository Clone
+### Configuración y ejecución
+* Si alguno de los siguientes pasos no funciona, vea este [video](https://www.youtube.com/watch?v=QMlpFdOQHfI)
+* Clonación del repositorio
 ```git
 git clone https://github.com/youruser/email-notifications.git
 cd email-notifications
 ```
-* Before building the Docker image, you need to generate the JAR file of the project. Run the following command from the root directory of the project:
+* Antes de crear la imagen de Docker, debe generar el archivo JAR del proyecto. Ejecute el siguiente comando desde el directorio raíz del proyecto:
 ```git
 ./mvnw clean package
-or
-mvn clean package (If you have Maven installed globally)
+o
+mvn clean package (si tiene Maven instalado globalmente)
 ```
-* This will create a .jar file inside the target/ directory, with a name similar to:
+* Esto creará un archivo .jar dentro del directorio `target/`, con un nombre similar a:
 ```git
 target/email-notifications-0.0.1-SNAPSHOT.jar
 ```
-* This file will be used by Docker to build the application image.
-* Before building and running the containers, make sure you have Docker running (for Windows, use [Docker Desktop]([https://nodejs.org/en/download](https://www.docker.com/products/docker-desktop/)))
-* Once installed, make sure Docker is running
+* Docker utilizará este archivo para compilar la imagen de la aplicación. * Antes de compilar y ejecutar los contenedores, asegúrese de tener Docker ejecutándose (para Windows, use [Docker Desktop]([https://nodejs.org/en/download](https://www.docker.com/products/docker-desktop/)))
+* Una vez instalado, asegúrese de que Docker esté ejecutándose
 ```git
 docker --version
 ```
-* Once Docker is running, you can build and deploy the containers
+* Una vez que Docker esté ejecutándose, puede compilar e implementar los contenedores
 ```git
 docker-compose up --build
 ```
-* If there is any problem building our service environment with Docker and if any image is in use and you cannot remove it directly, you can force the removal with the following command:
+* Si hay algún problema al compilar nuestro entorno de servicio con Docker y alguna imagen está en uso y no puede eliminarla directamente, puede forzar su eliminación con el siguiente comando:
 ```git
 docker rmi -f $(docker images -q)
 ```
-* Then, to do a general cleanup of everything unused (stopped containers, untagged images, unused networks, etc.), you can use the following command::
+* Luego, para realizar una limpieza general de todo lo no utilizado (contenedores detenidos, imágenes sin etiquetar, redes sin usar, etc.), puede usar el siguiente comando:
 ```git
 docker system prune -a --volumes
 ```
-* We rebuild our containers
+* Reconstruimos nuestros contenedores
 ```git
 docker-compose up --build
 ```
 
-### Testing
-* Access MailHog. The MailHog web interface will be available at `http://localhost:8025`, where you can view sent emails.
-* You can test the API using Postman or any HTTP client by sending a POST request to `http://localhost:8080/api/users` with the following JSON body.
+### Pruebas
+* Accede a MailHog. La interfaz web de MailHog estará disponible en `http://localhost:8025`, donde podrás ver los correos electrónicos enviados.
+* Puedes probar la API usando Postman o cualquier cliente HTTP enviando una solicitud POST a `http://localhost:8080/api/users` con el siguiente cuerpo JSON.
 ```git
 {
 "name": "John",
 "email": "john@example.com"
 }
 ```
-* `Important` : Now the application is Dockerized. We can stop or run the app directly with Docker.
+* `Importante`: ​​Ahora la aplicación está Dockerizada. Podemos detenerla o ejecutarla directamente con Docker.
