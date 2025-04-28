@@ -1,10 +1,26 @@
 <div align = "center">
-  <img src="./doc/assets/img/mailhog.jpeg" >
+  <img src="./src/main/resources/static/img/mailhog.jpeg" >
 </div>
 
 <br>
 
+<div align="right">
+     <a href="./translations/README.es.md" target="_blank">
+       <img src="./src/main/resources/static/img/arg-flag.jpg" width="10%" height="10%" />
+   </a>
+    <a href="https://github.com/andresWeitzel/Api_Rest_Microservices_Projects" target="_blank">
+       <img src="./src/main/resources/static/img/eeuu-flag.jpg" width="10%" height="10%" />
+   </a>
+</div>
+
+<div align="center">
+
 ## Email Notifications MailHog
+
+</div>
+
+<br>
+
 This is a Spring Boot-based demo project for sending emails. It uses MailHog as an SMTP server for local testing and is fully Dockerized for easy execution.
 [Demo](https://www.youtube.com/watch?v=QMlpFdOQHfI)
 
