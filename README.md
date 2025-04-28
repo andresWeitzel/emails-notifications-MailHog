@@ -5,10 +5,10 @@
 <br>
 
 <div align="right">
-     <a href="./translations/README.es.md" target="_blank">
+     <a href="./src/main/resources/static/translation/README.es.md" target="_blank">
        <img src="./src/main/resources/static/img/arg-flag.jpg" width="10%" height="10%" />
    </a>
-    <a href="https://github.com/andresWeitzel/Api_Rest_Microservices_Projects" target="_blank">
+    <a href="https://github.com/andresWeitzel/emails-notifications-MailHog" target="_blank">
        <img src="./src/main/resources/static/img/eeuu-flag.jpg" width="10%" height="10%" />
    </a>
 </div>
