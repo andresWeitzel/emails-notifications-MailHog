@@ -306,79 +306,7 @@ curl -X POST http://localhost:8080/api/users \
 }
 ```
 
-#### Usando PowerShell (Windows)
-
-```powershell
-# Registro de usuario
-$body = @{
-    name = "Usuario Test"
-    email = "usuario@test.com"
-} | ConvertTo-Json
-
-Invoke-RestMethod -Uri "http://localhost:8080/api/users" -Method POST -Body $body -ContentType "application/json"
-```
-
-### 6. Casos de prueba de errores
-
-#### Caso 1: Email inválido
-
-**Body:**
-```json
-{
-    "name": "Test",
-    "email": "email-invalido"
-}
-```
-
-#### Caso 2: Datos faltantes
-
-**Body:**
-```json
-{
-    "name": "Test"
-}
-```
-
-#### Caso 3: Body vacío
-
-**Body:** `{}`
-
-### 7. Monitoreo y debugging
-
-#### Ver logs en tiempo real
-
-```bash
-# Logs de la aplicación Spring Boot
-docker logs -f springboot-app
-
-# Logs de MailHog
-docker logs -f mailhog
-```
-
-#### Verificar conectividad entre servicios
-
-```bash
-# Verificar que MailHog esté escuchando en el puerto 1025
-netstat -an | findstr :1025
-
-# Verificar que la aplicación esté escuchando en el puerto 8080
-netstat -an | findstr :8080
-```
-
-### 8. Casos de prueba de rendimiento
-
-#### Múltiples registros simultáneos
-
-```bash
-# Script para registrar múltiples usuarios
-for i in {1..10}; do
-  curl -X POST http://localhost:8080/api/users \
-    -H "Content-Type: application/json" \
-    -d "{\"name\": \"Usuario $i\", \"email\": \"usuario$i@test.com\"}"
-done
-```
-
-### 9. Limpieza y reinicio
+### 6. Limpieza y reinicio
 
 #### Limpiar emails en MailHog
 
@@ -399,7 +327,7 @@ docker-compose up --build
 docker-compose restart app
 ```
 
-### 10. Troubleshooting
+### 7. Troubleshooting
 
 #### Problema: No se reciben emails
 
