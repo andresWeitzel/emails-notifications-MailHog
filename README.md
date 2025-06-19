@@ -39,7 +39,7 @@
 
 This is a Spring Boot-based demo project for sending emails. It uses MailHog as an SMTP server for local testing and is fully Dockerized for easy execution.
 
-* [Functional tests video](https://www.youtube.com/watch?v=zPqArsLfH7o) <a href="https://www.youtube.com/watch?v=QMlpFdOQHfI" target="_blank"> <img src="./src/main/resources/static/icons/social-networks/yt.png" width="25" /></a>
+* [Functional tests video](https://www.youtube.com/watch?v=QMlpFdOQHfI) <a href="https://www.youtube.com/watch?v=QMlpFdOQHfI" target="_blank"> <img src="./src/main/resources/static/icons/social-networks/yt.png" width="25" /></a>
 
 
 ## Sections
@@ -187,6 +187,15 @@ emails-notifications-MailHog/
 
 <details>
 <summary>7. Testing</summary>
+
+<br>
+
+
+#### [Watch video](https://www.youtube.com/watch?v=QMlpFdOQHfI)
+
+  <a href="https://www.youtube.com/watch?v=QMlpFdOQHfI">
+    <img src="./src/main/resources/static/img/mailhog_yt.png" />
+  </a> 
 
 <br>
 
