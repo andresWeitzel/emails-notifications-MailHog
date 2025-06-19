@@ -95,7 +95,7 @@ This is a Spring Boot-based demo project for sending emails. It uses MailHog as 
 
 * Repository Clone
 ```git
-# Clonar el repositorio
+# Clone the repository
 git clone https://github.com/youruser/email-notifications.git
 cd email-notifications
 ```
@@ -103,7 +103,7 @@ cd email-notifications
 * Before building the Docker image, you need to generate the JAR file of the project. Run the following command from the root directory of the project:
 ```git
 ./mvnw clean package
-# o
+# or
 mvn clean package # (If you have Maven installed globally)
 ```
 
@@ -190,7 +190,6 @@ emails-notifications-MailHog/
 
 <br>
 
-
 #### [Watch video](https://www.youtube.com/watch?v=QMlpFdOQHfI)
 
   <a href="https://www.youtube.com/watch?v=QMlpFdOQHfI">
@@ -199,33 +198,33 @@ emails-notifications-MailHog/
 
 <br>
 
-### 1. Verificar que la aplicación esté funcionando
+### 1. Verify that the application is running
 
-* **Verificar contenedores Docker:**
+* **Verify Docker containers:**
 ```bash
 docker ps
 ```
 
-Deberías ver dos contenedores ejecutándose:
-- `springboot-app` en el puerto 8080
-- `mailhog` en el puerto 8025
+You should see two containers running:
+- `springboot-app` on port 8080
+- `mailhog` on port 8025
 
-* **Verificar logs de la aplicación:**
+* **Verify application logs:**
 ```bash
 docker logs springboot-app
 ```
 
-### 2. Acceder a MailHog
+### 2. Access MailHog
 
-* La interfaz web de MailHog estará disponible en `http://localhost:8025`
+* The MailHog web interface will be available at `http://localhost:8025`
 
-* Aquí podrás ver todos los emails enviados por la aplicación
+* Here you can see all emails sent by the application
 
-* La interfaz muestra: remitente, destinatario, asunto y contenido del email
+* The interface shows: sender, recipient, subject and email content
 
-### 3. Casos de prueba de la API
+### 3. API test cases
 
-#### Caso 1: Registro de usuario exitoso
+#### Case 1: Successful user registration
 
 **Endpoint:** `POST http://localhost:8080/api/users`
 
@@ -234,12 +233,12 @@ docker logs springboot-app
 **Body:**
 ```json
 {
-    "name": "Juan Pérez",
-    "email": "juan.perez@example.com"
+    "name": "John Doe",
+    "email": "john.doe@example.com"
 }
 ```
 
-**Respuesta esperada:**
+**Expected response:**
 ```json
 {
     "status": 200,
@@ -247,58 +246,58 @@ docker logs springboot-app
 }
 ```
 
-#### Caso 2: Registro con datos mínimos
+#### Case 2: Registration with minimal data
 
 **Body:**
 ```json
 {
-    "name": "Ana",
-    "email": "ana@test.com"
+    "name": "Jane",
+    "email": "jane@test.com"
 }
 ```
 
-#### Caso 3: Registro con caracteres especiales
+#### Case 3: Registration with special characters
 
 **Body:**
 ```json
 {
     "name": "María José",
-    "email": "maria.jose@empresa.com"
+    "email": "maria.jose@company.com"
 }
 ```
 
-### 4. Verificación de emails en MailHog
+### 4. Email verification in MailHog
 
-Después de cada registro exitoso, verifica en `http://localhost:8025`:
+After each successful registration, verify at `http://localhost:8025`:
 
-* **Remitente:** `spring-boot@localhost`
+* **Sender:** `spring-boot@localhost`
 
-* **Destinatario:** El email proporcionado en la petición
+* **Recipient:** The email provided in the request
 
-* **Asunto:** `Welcome [nombre]`
+* **Subject:** `Welcome [name]`
 
-* **Contenido:** `Hello [nombre], welcome to our platform!`
+* **Content:** `Hello [name], welcome to our platform!`
 
-### 5. Casos de prueba con herramientas
+### 5. Test cases with tools
 
-#### Usando cURL
+#### Using cURL
 
 ```bash
-# Registro básico
+# Basic registration
 curl -X POST http://localhost:8080/api/users \
   -H "Content-Type: application/json" \
   -d '{"name": "Carlos López", "email": "carlos@example.com"}'
 ```
 
-#### Usando Postman
+#### Using Postman
 
-1. Crear nueva colección "Email Notifications"
+1. Create new collection "Email Notifications"
 
-2. Crear request POST a `http://localhost:8080/api/users`
+2. Create POST request to `http://localhost:8080/api/users`
 
-3. En Headers agregar: `Content-Type: application/json`
+3. Add in Headers: `Content-Type: application/json`
 
-4. En Body (raw JSON) agregar:
+4. Add in Body (raw JSON):
 ```json
 {
     "name": "Test User",
@@ -306,54 +305,54 @@ curl -X POST http://localhost:8080/api/users \
 }
 ```
 
-### 6. Limpieza y reinicio
+### 6. Cleanup and restart
 
-#### Limpiar emails en MailHog
+#### Clear emails in MailHog
 
-* Acceder a `http://localhost:8025`
+* Access `http://localhost:8025`
 
-* Hacer clic en "Delete All" para limpiar todos los emails
+* Click "Delete All" to clear all emails
 
-#### Reiniciar servicios
+#### Restart services
 
 ```bash
-# Detener servicios
+# Stop services
 docker-compose down
 
-# Reiniciar servicios
+# Restart services
 docker-compose up --build
 
-# Reiniciar solo la aplicación
+# Restart only the application
 docker-compose restart app
 ```
 
 ### 7. Troubleshooting
 
-#### Problema: No se reciben emails
+#### Problem: No emails received
 
-* Verificar que MailHog esté ejecutándose: `docker ps`
+* Verify that MailHog is running: `docker ps`
 
-* Verificar logs de MailHog: `docker logs mailhog`
+* Verify MailHog logs: `docker logs mailhog`
 
-* Verificar configuración SMTP en `application.properties`
+* Verify SMTP configuration in `application.properties`
 
-#### Problema: Error de conexión a la API
+#### Problem: API connection error
 
-* Verificar que la aplicación esté ejecutándose: `docker ps`
+* Verify that the application is running: `docker ps`
 
-* Verificar logs de la aplicación: `docker logs springboot-app`
+* Verify application logs: `docker logs springboot-app`
 
-* Verificar que el puerto 8080 esté disponible
+* Verify that port 8080 is available
 
-#### Problema: Error de Docker
+#### Problem: Docker error
 
 ```bash
-# Limpiar Docker completamente
+# Clean Docker completely
 docker system prune -a --volumes
 docker-compose up --build
 ```
 
-* `Important` : Ahora la aplicación está Dockerizada. Podemos detener o ejecutar la app directamente con Docker.
+* `Important` : Now the application is Dockerized. We can stop or run the app directly with Docker.
 
 </details>
 
@@ -362,7 +361,7 @@ docker-compose up --build
 
 <br>
 
-* Email must be present and valid format (handled by JavaMailSender, but you can extend validation in el modelo User o el controlador).
+* Email must be present and valid format (handled by JavaMailSender, but you can extend validation in the User model or controller).
 
 * Name must be present.
 
