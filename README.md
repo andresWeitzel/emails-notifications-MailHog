@@ -2,6 +2,21 @@
   <img src="./src/main/resources/static/img/mailhog.jpeg" >
 </div>
 
+
+  <div align="right">
+    <img width="24" height="24" src="./src/main/resources/static/icons/backend/java/png/java.png" />
+    <img width="20" height="20" src="./src/main/resources/static/icons/devops/png/maven.png" />
+    <img width="22" height="22" src="./src/main/resources/static/icons/devops/png/postman.png" />
+    <img width="22" height="22" src="./src/main/resources/static/icons/devops/png/git.png" />
+    <img width="20" height="20" src="./src/main/resources/static/icons/backend/java/png/junit.png" />
+    <img width="20" height="20" src="./src/main/resources/static/icons/devops/png/swagger.png" /> 
+    <img width="20" height="20" src="./src/main/resources/static/icons/backend/java/png/spring-boot.png" /> 
+    <img width="20" height="20" src="./src/main/resources/static/icons/devops/png/docker.png" />    
+  </div>
+
+
+<br>
+
 <br>
 
 <div align="right">
@@ -13,80 +28,455 @@
    </a>
 </div>
 
-<div align="center">
+<br>
 
-## Email Notifications MailHog
+<div align="center">  
+
+# Email Notifications MailHog ![Status](./src/main/resources/static/icons/badges/status-completed.svg)
+
 
 </div>
 
+This is a Spring Boot-based demo project for sending emails. It uses MailHog as an SMTP server for local testing and is fully Dockerized for easy execution.
+
+* [Functional tests video](https://www.youtube.com/watch?v=zPqArsLfH7o) <a href="https://www.youtube.com/watch?v=QMlpFdOQHfI" target="_blank"> <img src="./src/main/resources/static/icons/social-networks/yt.png" width="25" /></a>
+
+
+## Sections
+
+<details>
+<summary>1. Features</summary>
+
 <br>
 
-This is a Spring Boot-based demo project for sending emails. It uses MailHog as an SMTP server for local testing and is fully Dockerized for easy execution.
-[Demo](https://www.youtube.com/watch?v=QMlpFdOQHfI)
-
-### Technologies and Dependencies
-* Spring Boot: Core framework for building Java applications.
-* Spring Boot Starter Web: For creating RESTful web applications.
-* Spring Boot Starter Mail: For handling emails.
-* Lombok: A library to reduce boilerplate in code.
-* MailHog: SMTP server for local email testing.
-* Docker: For creating and managing application containers.
-
-### Features
 * User Registration: Through a REST controller, users can register and receive a welcome email.
+
 * Sending Emails: Using JavaMailSender to send emails through MailHog in the development environment.
 
-### Requirements
+</details>
+
+
+<details>
+<summary>2. Requirements</summary>
+
+<br>
+
 * Java 17 or higher.
+
 * Docker to run MailHog and the containerized application.
 
-### Configuration and Execution
+</details>
+
+<details>
+<summary>3. Technologies and Dependencies</summary>
+
+<br>
+
+* Spring Boot: Core framework for building Java applications.
+
+* Spring Boot Starter Web: For creating RESTful web applications.
+
+* Spring Boot Starter Mail: For handling emails.
+
+* Lombok: A library to reduce boilerplate in code.
+
+* MailHog: SMTP server for local email testing.
+
+* Docker: For creating and managing application containers.
+
+</details>
+
+<details>
+<summary>4. Configuration and Execution</summary>
+
+<br>
+
 * If any of the following steps don't work, watch this [video](https://www.youtube.com/watch?v=QMlpFdOQHfI)
+
 * Repository Clone
 ```git
+# Clonar el repositorio
 git clone https://github.com/youruser/email-notifications.git
 cd email-notifications
 ```
+
 * Before building the Docker image, you need to generate the JAR file of the project. Run the following command from the root directory of the project:
 ```git
 ./mvnw clean package
-or
-mvn clean package (If you have Maven installed globally)
+# o
+mvn clean package # (If you have Maven installed globally)
 ```
+
 * This will create a .jar file inside the target/ directory, with a name similar to:
 ```git
 target/email-notifications-0.0.1-SNAPSHOT.jar
 ```
+
 * This file will be used by Docker to build the application image.
-* Before building and running the containers, make sure you have Docker running (for Windows, use [Docker Desktop]([https://nodejs.org/en/download](https://www.docker.com/products/docker-desktop/)))
+
+* Before building and running the containers, make sure you have Docker running (for Windows, use [Docker Desktop](https://www.docker.com/products/docker-desktop))
+
 * Once installed, make sure Docker is running
 ```git
 docker --version
 ```
+
 * Once Docker is running, you can build and deploy the containers
 ```git
 docker-compose up --build
 ```
+
 * If there is any problem building our service environment with Docker and if any image is in use and you cannot remove it directly, you can force the removal with the following command:
 ```git
 docker rmi -f $(docker images -q)
 ```
-* Then, to do a general cleanup of everything unused (stopped containers, untagged images, unused networks, etc.), you can use the following command::
+
+* Then, to do a general cleanup of everything unused (stopped containers, untagged images, unused networks, etc.), you can use the following command:
 ```git
 docker system prune -a --volumes
 ```
+
 * We rebuild our containers
 ```git
 docker-compose up --build
 ```
 
-### Testing
-* Access MailHog. The MailHog web interface will be available at `http://localhost:8025`, where you can view sent emails.
-* You can test the API using Postman or any HTTP client by sending a POST request to `http://localhost:8080/api/users` with the following JSON body.
-```git
+</details>
+
+<details>
+<summary>5. Project Structure</summary>
+
+<br>
+
+```
+emails-notifications-MailHog/
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/demo/
+│   │   │   ├── controller/UserController.java
+│   │   │   ├── model/User.java
+│   │   │   └── service/EmailService.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── static/img/
+│   │           ├── arg-flag.jpg
+│   │           ├── eeuu-flag.jpg
+│   │           └── mailhog.jpeg
+│   │       └── static/translation/README.es.md
+│   └── test/java/com/example/demo/EmailNotificationsApplicationTests.java
+├── docker-compose.yml
+├── Dockerfile
+├── pom.xml
+└── README.md
+```
+
+</details>
+
+<details>
+<summary>6. Processing Flow</summary>
+
+<br>
+
+1. **User Registration**: Receives a POST request with user data (name, email).
+
+2. **Email Sending**: Sends a welcome email to the registered user using MailHog as SMTP.
+
+3. **Email Verification**: The email can be viewed in the MailHog web interface.
+
+</details>
+
+<details>
+<summary>7. Testing</summary>
+
+<br>
+
+### 1. Verificar que la aplicación esté funcionando
+
+* **Verificar contenedores Docker:**
+```bash
+docker ps
+```
+
+Deberías ver dos contenedores ejecutándose:
+- `springboot-app` en el puerto 8080
+- `mailhog` en el puerto 8025
+
+* **Verificar logs de la aplicación:**
+```bash
+docker logs springboot-app
+```
+
+### 2. Acceder a MailHog
+
+* La interfaz web de MailHog estará disponible en `http://localhost:8025`
+
+* Aquí podrás ver todos los emails enviados por la aplicación
+
+* La interfaz muestra: remitente, destinatario, asunto y contenido del email
+
+### 3. Casos de prueba de la API
+
+#### Caso 1: Registro de usuario exitoso
+
+**Endpoint:** `POST http://localhost:8080/api/users`
+
+**Headers:** `Content-Type: application/json`
+
+**Body:**
+```json
 {
-"name": "John",
-"email": "john@example.com"
+    "name": "Juan Pérez",
+    "email": "juan.perez@example.com"
 }
 ```
-* `Important` : Now the application is Dockerized. We can stop or run the app directly with Docker.
+
+**Respuesta esperada:**
+```json
+{
+    "status": 200,
+    "message": "User registered and email sent."
+}
+```
+
+#### Caso 2: Registro con datos mínimos
+
+**Body:**
+```json
+{
+    "name": "Ana",
+    "email": "ana@test.com"
+}
+```
+
+#### Caso 3: Registro con caracteres especiales
+
+**Body:**
+```json
+{
+    "name": "María José",
+    "email": "maria.jose@empresa.com"
+}
+```
+
+### 4. Verificación de emails en MailHog
+
+Después de cada registro exitoso, verifica en `http://localhost:8025`:
+
+* **Remitente:** `spring-boot@localhost`
+
+* **Destinatario:** El email proporcionado en la petición
+
+* **Asunto:** `Welcome [nombre]`
+
+* **Contenido:** `Hello [nombre], welcome to our platform!`
+
+### 5. Casos de prueba con herramientas
+
+#### Usando cURL
+
+```bash
+# Registro básico
+curl -X POST http://localhost:8080/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Carlos López", "email": "carlos@example.com"}'
+```
+
+#### Usando Postman
+
+1. Crear nueva colección "Email Notifications"
+
+2. Crear request POST a `http://localhost:8080/api/users`
+
+3. En Headers agregar: `Content-Type: application/json`
+
+4. En Body (raw JSON) agregar:
+```json
+{
+    "name": "Test User",
+    "email": "test@example.com"
+}
+```
+
+#### Usando PowerShell (Windows)
+
+```powershell
+# Registro de usuario
+$body = @{
+    name = "Usuario Test"
+    email = "usuario@test.com"
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://localhost:8080/api/users" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 6. Casos de prueba de errores
+
+#### Caso 1: Email inválido
+
+**Body:**
+```json
+{
+    "name": "Test",
+    "email": "email-invalido"
+}
+```
+
+#### Caso 2: Datos faltantes
+
+**Body:**
+```json
+{
+    "name": "Test"
+}
+```
+
+#### Caso 3: Body vacío
+
+**Body:** `{}`
+
+### 7. Monitoreo y debugging
+
+#### Ver logs en tiempo real
+
+```bash
+# Logs de la aplicación Spring Boot
+docker logs -f springboot-app
+
+# Logs de MailHog
+docker logs -f mailhog
+```
+
+#### Verificar conectividad entre servicios
+
+```bash
+# Verificar que MailHog esté escuchando en el puerto 1025
+netstat -an | findstr :1025
+
+# Verificar que la aplicación esté escuchando en el puerto 8080
+netstat -an | findstr :8080
+```
+
+### 8. Casos de prueba de rendimiento
+
+#### Múltiples registros simultáneos
+
+```bash
+# Script para registrar múltiples usuarios
+for i in {1..10}; do
+  curl -X POST http://localhost:8080/api/users \
+    -H "Content-Type: application/json" \
+    -d "{\"name\": \"Usuario $i\", \"email\": \"usuario$i@test.com\"}"
+done
+```
+
+### 9. Limpieza y reinicio
+
+#### Limpiar emails en MailHog
+
+* Acceder a `http://localhost:8025`
+
+* Hacer clic en "Delete All" para limpiar todos los emails
+
+#### Reiniciar servicios
+
+```bash
+# Detener servicios
+docker-compose down
+
+# Reiniciar servicios
+docker-compose up --build
+
+# Reiniciar solo la aplicación
+docker-compose restart app
+```
+
+### 10. Troubleshooting
+
+#### Problema: No se reciben emails
+
+* Verificar que MailHog esté ejecutándose: `docker ps`
+
+* Verificar logs de MailHog: `docker logs mailhog`
+
+* Verificar configuración SMTP en `application.properties`
+
+#### Problema: Error de conexión a la API
+
+* Verificar que la aplicación esté ejecutándose: `docker ps`
+
+* Verificar logs de la aplicación: `docker logs springboot-app`
+
+* Verificar que el puerto 8080 esté disponible
+
+#### Problema: Error de Docker
+
+```bash
+# Limpiar Docker completamente
+docker system prune -a --volumes
+docker-compose up --build
+```
+
+* `Important` : Ahora la aplicación está Dockerizada. Podemos detener o ejecutar la app directamente con Docker.
+
+</details>
+
+<details>
+<summary>8. Implemented Validations</summary>
+
+<br>
+
+* Email must be present and valid format (handled by JavaMailSender, but you can extend validation in el modelo User o el controlador).
+
+* Name must be present.
+
+</details>
+
+<details>
+<summary>9. Reports</summary>
+
+<br>
+
+* **MailHog Web Interface:** All sent emails can be viewed at [http://localhost:8025](http://localhost:8025)
+
+* **Application Logs:**
+  * View logs with `docker logs springboot-app`
+  * View MailHog logs with `docker logs mailhog`
+
+* **Troubleshooting:** See the Troubleshooting section in Testing.
+
+</details>
+
+<details>
+<summary>10. Contributing</summary>
+
+<br>
+
+1. Fork the project
+
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+
+5. Open a Pull Request
+
+</details>
+
+<details>
+<summary>11. License</summary>
+
+<br>
+
+This project is under the MIT License - see the LICENSE file for details.
+
+</details>
+
+<details>
+<summary>12. About</summary>
+
+<br>
+
+This project implements a simple email notification system using Spring Boot and MailHog for local SMTP testing. It is fully Dockerized for easy local development and testing.
+
+</details>
