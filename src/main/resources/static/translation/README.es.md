@@ -30,7 +30,7 @@
 
 <div align="center">  
 
-# Notificaciones por correo electrónico MailHog ![Status](../icons/badges/status-completed.svg)
+# Notificaciones por correo electrónico MailHog ![(status-completed)](../icons/badges/status-completed.svg)
 
 </div>
 
