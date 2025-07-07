@@ -19,10 +19,10 @@
 
 <div align="right">
      <a href="./README.es.md" target="_blank">
-       <img src="../img/arg-flag.jpg" height="30%" />
+       <img src="../img/arg-flag.jpg"  width="65" height="40" />
    </a>
     <a href="https://github.com/andresWeitzel/emails-notifications-MailHog" target="_blank">
-       <img src="../img/eeuu-flag.jpg" height="30%" />
+       <img src="../img/eeuu-flag.jpg"  width="65" height="40" />
    </a>
 </div>
 
