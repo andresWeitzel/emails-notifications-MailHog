@@ -26,11 +26,10 @@
   </a>
 </div>
 
-<br>
 
 <div align="center">
 
-# Email Notifications MailHog ![Status](./src/main/resources/static/icons/badges/status-completed.svg)
+# Email Notifications MailHog ![(status-completed)](./src/main/resources/static/icons/badges/status-completed.svg)
 
 </div>
 

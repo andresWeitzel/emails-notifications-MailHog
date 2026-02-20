@@ -30,7 +30,7 @@
 
 <div align="center">
 
-# Notificaciones por correo electrónico MailHog ![Status](../icons/badges/status-completed.svg)
+# Notificaciones por correo electrónico MailHog ![(status-completed)](../icons/badges/status-completed.svg)
 
 </div>
 
@@ -524,4 +524,10 @@ Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más deta
 
 <br>
 
+<<<<<<< HEAD
 </details>
+=======
+Este proyecto implementa un sistema simple de notificaciones por correo electrónico usando Spring Boot y MailHog para pruebas SMTP locales. Está completamente Dockerizado para facilitar el desarrollo y las pruebas locales.
+
+</details> 
+>>>>>>> 00baf39d426389b5cfcfe19c2a7efbb03a68b3c1
